@@ -8,7 +8,15 @@ You can install **uv** using the standalone installer or via your preferred pack
 
 `uv` provides a standalone installer script for quick setup.
 
-#### macOS and Linux
+#### Use irm to download the script and execute it with iex
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+
+## Installing `vLLM`
+
+```bash
+uv pip install vllm
+```
