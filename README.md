@@ -79,12 +79,12 @@ To activate your virtual environment in a new terminal:
 ```bash
 source ~/.venv/bin/activate
 ```
-## Run vLLM
-Login to Hugging Face
+## Login to Huggingface 
+(for running restricted models)
 ```bash
 huggingface-cli login
 ```
-Serve the Model
+## Run vLLM
 For getting started you can use (Don't expect good performance):
 ```bash
 vllm serve TinyLlama/TinyLlama-1.1B-Chat-v1.0 \
