@@ -102,5 +102,10 @@ vllm serve meta-llama/Llama-3.2-3B-Instruct \
 ```
 
 
+## Connect with langflow
+
+<img width="1328" height="653" alt="image" src="https://github.com/user-attachments/assets/0b41c5dc-949c-45f2-9aa7-858f9909e1b4" />
+
+
 
  
