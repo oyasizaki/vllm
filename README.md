@@ -1,3 +1,10 @@
+## Setting up `OS` (Local)
+```bash
+wsl --install Ubuntu-22.04
+```
+
+
+
 ## Installing `uv`
 
 
@@ -17,54 +24,70 @@ curl -LsSf https://astral.sh/uv/0.9.29/install.sh | sh
 ```
 
 
+Run this command to add uv to your PATH for the current session:
+```bash
+source $HOME/.local/bin/env
+```
+Verify Installation
+```bash
+uv --version
+```
+
+
+## Installing `Dependencies` (Local)
+Check GPU Memory First
+```bash
+nvidia-smi
+```
+Install C Compiler
+```bash
+sudo apt update
+sudo apt install build-essential -y
+```
+Install C Compiler
+```bash
+sudo apt install python3.10-dev -y
+```
+## Installing `CUDA Toolkit` (Local)
+Check GPU Memory First
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/12.6.0/local_installers/cuda_12.6.0_560.28.03_linux.run
+sudo sh cuda_12.6.0_560.28.03_linux.run
+```
+Set Environment Variables
+```bash
+echo 'export CUDA_HOME=/usr/local/cuda' >> ~/.bashrc
+echo 'export PATH=$CUDA_HOME/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+Verify Installation
+```bash
+nvcc --version
+```
+
 ## Installing `vLLM`
 
 ```bash
 uv pip install vllm
 ```
-
-
- # vLLM Installation on Ubuntu / WSL (Correct Way)
-
-This guide avoids PEP 668 errors and installs vLLM safely using a virtual environment.
-
----
-
-## Step 1 — Install venv support (once)
-
+To activate your virtual environment in a new terminal:
 ```bash
-sudo apt update
-sudo apt install python3-venv python3-full -y
+source ~/.venv/bin/activate
+```
+## Run vLLM
+Login to Hugging Face
+```bash
+huggingface-cli login
+```
+Serve the Model
+```bash
+vllm serve meta-llama/Llama-3.2-3B-Instruct \
+  --host 0.0.0.0 \
+  --port 8000 \
+  --gpu-memory-utilization 0.75
 ```
 
-##Step 2 — Create clean virtual environment
 
-```bash
-cd ~/vllm
-python3 -m venv .venv
-```
 
-##Step 3 — Activate it
-
-```bash
-source .venv/bin/activate
-```
-
-###Your prompt should look like:
-
-```bash
-(.venv) home@ANKAN:~/vllm$
-```
-
-##Step 4 — Install vLLM inside venv
-
-```bash
-pip install --upgrade pip
-pip install vllm
-```
-
-##Step 5 — Run your program
-
-```bash
-python main.py
-```
+ 
