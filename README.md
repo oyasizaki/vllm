@@ -100,11 +100,19 @@ vllm serve meta-llama/Llama-3.2-3B-Instruct \
   --port 8000 \
   --gpu-memory-utilization 0.75
 ```
-
+I am using
+```bash
+vllm serve Qwen/Qwen2.5-1.5B-Instruct \
+  --host 0.0.0.0 \
+  --port 8000 \
+  --gpu-memory-utilization 0.75
+```
 
 ## Connect with langflow
-
-<img width="1328" height="653" alt="image" src="https://github.com/user-attachments/assets/0b41c5dc-949c-45f2-9aa7-858f9909e1b4" />
+Flow
+<img width="880" height="524" alt="image" src="https://github.com/user-attachments/assets/078ea966-7dde-4a58-967e-bf6780a89a06" />
+Chatbox
+<img width="829" height="524" alt="image" src="https://github.com/user-attachments/assets/f3f48c2c-b0b1-4a68-8be8-854e71d40d6a" />
 
 
 
