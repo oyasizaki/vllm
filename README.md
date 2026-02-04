@@ -75,10 +75,7 @@ source ~/.venv_vllm/bin/activate
 ```bash
 uv pip install vllm
 ```
-To activate your virtual environment in a new terminal:
-```bash
-source ~/.venv/bin/activate
-```
+
 ## Login to Huggingface 
 (for running restricted models)
 ```bash
