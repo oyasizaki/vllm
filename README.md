@@ -105,6 +105,11 @@ vllm serve Qwen/Qwen2.5-1.5B-Instruct \
   --gpu-memory-utilization 0.75
 ```
 
+## vLLM `API URL`:
+```bash
+http://localhost:8000/v1/chat/completions
+```
+
 ## Connect with langflow
 Flow
 <img width="880" height="524" alt="image" src="https://github.com/user-attachments/assets/078ea966-7dde-4a58-967e-bf6780a89a06" />
