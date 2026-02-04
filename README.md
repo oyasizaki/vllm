@@ -70,7 +70,6 @@ nvcc --version
 sudo apt install python3.10-venv
 python3 -m venv ~/.venv_vllm
 source ~/.venv_vllm/bin/activate
-pip install vllm
 ```
 ## Installing `vLLM`
 ```bash
