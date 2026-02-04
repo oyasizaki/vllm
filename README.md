@@ -85,6 +85,15 @@ Login to Hugging Face
 huggingface-cli login
 ```
 Serve the Model
+For getting started you can use (Don't expect good performance):
+```bash
+vllm serve TinyLlama/TinyLlama-1.1B-Chat-v1.0 \
+  --host 0.0.0.0 \
+  --port 8000 \
+  --gpu-memory-utilization 0.75
+```
+
+If you have better GPU then you can run:
 ```bash
 vllm serve meta-llama/Llama-3.2-3B-Instruct \
   --host 0.0.0.0 \
