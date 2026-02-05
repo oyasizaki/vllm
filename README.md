@@ -28,6 +28,9 @@ Run this command to add uv to your PATH for the current session:
 ```bash
 source $HOME/.local/bin/env
 ```
+```bash
+uv venv
+```
 Verify Installation
 ```bash
 uv --version
